@@ -1,0 +1,8 @@
+﻿  BSHLine.cpp
+  DDALine.cpp
+C:\Users\Thinh\projects\ComputerGraphics\LineDrawing_LAB01\LineDrawing_LAB01\DDALine.cpp(12,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Thinh\projects\ComputerGraphics\LineDrawing_LAB01\LineDrawing_LAB01\DDALine.cpp(12,17): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Thinh\projects\ComputerGraphics\LineDrawing_LAB01\LineDrawing_LAB01\DDALine.cpp(23,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Thinh\projects\ComputerGraphics\LineDrawing_LAB01\LineDrawing_LAB01\DDALine.cpp(23,17): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  LineDrawing_LAB01.vcxproj -> C:\Users\Thinh\projects\ComputerGraphics\LineDrawing_LAB01\Debug\LineDrawing_LAB01.exe
