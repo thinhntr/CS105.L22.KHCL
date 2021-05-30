@@ -1,7 +1,6 @@
 import "./style.css";
 
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const scene = new THREE.Scene();
 
@@ -12,8 +11,7 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 
-camera.position.z = 30;
-// camera.position.setZ(30);
+camera.position.z = -3;
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
@@ -33,12 +31,6 @@ pointLight.position.set(5, 5, 5);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
-
-const lightHelper = new THREE.PointLightHelper(pointLight);
-const gridHelper = new THREE.GridHelper(200, 50);
-scene.add(lightHelper, gridHelper);
-
-const controls = new OrbitControls(camera, renderer.domElement);
 
 //  Random stars
 
@@ -87,6 +79,30 @@ const moon = new THREE.Mesh(
 
 scene.add(moon);
 
+moon.position.z = 30;
+moon.position.x = -10;
+
+thinh.position.z = -5;
+thinh.position.x = 2;
+
+// Move camera while scrolling
+
+function moveCamera() {
+  const t = document.body.getBoundingClientRect().top;
+  moon.rotation.x += 0.05;
+  moon.rotation.y += 0.075;
+  moon.rotation.z += 0.05;
+
+  thinh.rotation.y += 0.01;
+  thinh.rotation.z += 0.01;
+
+  camera.position.z = t * -0.01;
+  camera.position.y = t * -0.0002;
+  camera.position.x = t * -0.0002;
+}
+
+document.body.onscroll = moveCamera;
+
 // Animate loop
 
 function animate() {
@@ -96,11 +112,7 @@ function animate() {
   torus.rotation.y += 0.008;
   torus.rotation.z += 0.008;
 
-  thinh.rotation.x += 0.01;
-  thinh.rotation.y += 0.01;
-  thinh.rotation.z += 0.01;
-
-  controls.update();
+  moon.rotation.x += 0.005;
 
   renderer.render(scene, camera);
 }
