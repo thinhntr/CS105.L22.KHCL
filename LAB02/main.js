@@ -17,7 +17,7 @@ document.body.appendChild(renderer.domElement);
 // Torus shape
 
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial({ color: 0x8e24aa });
+const material = new THREE.MeshStandardMaterial({ color: 0x391e94 });
 const torus = new THREE.Mesh(geometry, material);
 scene.add(torus);
 
